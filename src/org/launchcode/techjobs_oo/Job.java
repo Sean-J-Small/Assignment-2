@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Job {
 
-    private int id;
-    private static int nextId = 1;
+    protected int id;
+    protected static int nextId = 1;
 
     private String name;
     private Employer employer;
@@ -92,5 +92,8 @@ public class Job {
 
     public int getId() {
         return id;
+    }
+
+    public void nextId(int i) {
     }
 }
