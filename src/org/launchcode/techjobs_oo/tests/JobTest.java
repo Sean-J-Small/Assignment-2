@@ -77,4 +77,19 @@ public class JobTest {
     }
 
 
+    @Test
+    public void testToString() {
+
+        Job job_testIdOne;
+        Job job_testIdTwo;
+
+        job_testIdOne = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
+        job_testIdTwo = new Job("", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
+
+        assertThat("\n" + "ID: " + job_testIdOne.getId() + "\n" + "Name: " + job_testIdOne.getName() + "\n" + "Employer: " + job_testIdOne.getEmployer() + "\n" + "Location: " + job_testIdOne.getLocation() + "\n" + "Position Type: " + job_testIdOne.getPositionType().getValue() + "\n" + "Core Competency: " + job_testIdOne.getCoreCompetency() + "\n", is(job_testIdOne.toString()));
+
+        assertThat("\n" + "ID: " + job_testIdTwo.getId() + "\n" + "Name: " + "Data not available" + "\n" + "Employer: " + job_testIdTwo.getEmployer() + "\n" + "Location: " + job_testIdTwo.getLocation() + "\n" + "Position Type: " + job_testIdTwo.getPositionType().getValue() + "\n" + "Core Competency: " + job_testIdTwo.getCoreCompetency() + "\n", is(job_testIdTwo.toString()));
+
+    }
+
 }

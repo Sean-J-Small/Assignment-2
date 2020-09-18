@@ -96,4 +96,48 @@ public class Job {
 
     public void nextId(int i) {
     }
+
+    @Override
+    public String toString() {
+        String toStringData ="\n" +"ID: " + getId() + "\n";
+
+        if (name.isBlank()) {
+            toStringData += "Name: Data not available" + "\n";
+        } else {
+            toStringData += "Name: " + name + "\n";
+        }
+
+
+        if (employer.getValue().isBlank()) {
+
+            toStringData += "Employer: Data not available" + "\n";
+        } else {
+            toStringData += "Employer: " + employer.getValue() + "\n";
+        }
+
+        if (location.getValue().isBlank()) {
+
+            toStringData += "Location: Data not available" + "\n";
+        } else {
+            toStringData += "Location: " + location.getValue() + "\n";
+        }
+
+        if (positionType.getValue().isBlank()) {
+
+            toStringData += "Position Type: Data not available" + "\n";
+        } else {
+            toStringData += "Position Type: " + positionType.getValue() + "\n";
+        }
+
+
+        if (coreCompetency.getValue().isBlank()) {
+
+            toStringData += "Core Competency: Data not available" + "\n";
+        } else {
+            toStringData += "Core Competency: " + coreCompetency.getValue() + "\n";
+        }
+
+        return toStringData;
+    }
+
 }
